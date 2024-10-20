@@ -1,15 +1,30 @@
-local Atmosphere = Instance.new("Atmosphere")
-local Blur = Instance.new("Blur")
-
-Blur.Size = 999
-Blur.Parent = game.Lighting
-
-Atmosphere.Density = 1
-Atmosphere.Glare = 10
-Atmosphere.Haze = 10
-Atmosphere.Color = Color3.new(0, 0, 0)
-Atmosphere.Decay = Color3.new(0, 0, 0)
-Atmosphere.Parent = game.Lighting
+local TS = game:GetService("TweenService")
+local timey = TweenInfo.new(2)
+local jen = Instance.new("ColorCorrectionEffect")
+jen.Parent = game.Lighting
+jen.Brightness = 0.05
+jen.Contrast = 0
+jen.Name = "Jen"
+jen.Enabled = true
+jen.TintColor = Color3.fromRGB(255, 255, 255)
+jen.Saturation = 0
+local goal = {}
+goal.Contrast = 1
+goal.Saturation = 1
+goal.TintColor = Color3.fromRGB(255, 0, 0)
+local tw = TS:Create(jen, timey, goal)
+tw:Play()
+wait(2)
+local goal2 = {}
+goal2.Contrast = 0
+goal2.Saturation = 0
+goal2.TintColor = Color3.fromRGB(255, 255, 255)
+goal2.Brightness = 0
+local tw2 = TS:Create(jen, timey, goal2)
+tw2:Play()
+wait(4)
+jen:Destroy()
+end
 
 require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Made by anzor",true)
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
@@ -21,8 +36,7 @@ require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("
 -- chainsmoker 
 coroutine.wrap(function()
     while true do
-        wait(math.random(80,120))
-        game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
         wait(2)
 loadstring(game:HttpGet('https://pastefy.app/udNEAT3w'))()
     end
@@ -30,9 +44,7 @@ end)()
 
 -- froger 
 coroutine.wrap(function()
-    while true do
-        wait(math.random(30,80))
-        game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
         wait(2)
 loadstring(game:HttpGet('https://pastefy.app/6eSvJ28C'))()
     end
