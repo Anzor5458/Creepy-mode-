@@ -1,0 +1,39 @@
+local Atmosphere = Instance.new("Atmosphere")
+local Blur = Instance.new("Blur")
+
+Blur.Size = 999
+Blur.Parent = game.Lighting
+
+Atmosphere.Density = 1
+Atmosphere.Glare = 10
+Atmosphere.Haze = 10
+Atmosphere.Color = Color3.new(0, 0, 0)
+Atmosphere.Decay = Color3.new(0, 0, 0)
+Atmosphere.Parent = game.Lighting
+
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("Made by anzor",true)
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+wait(1)
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("creepy mode now is active",true)
+wait(3)
+require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game).caption("l'm gay :)",true)
+
+-- chainsmoker 
+coroutine.wrap(function()
+    while true do
+        wait(math.random(80,120))
+        game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+        wait(2)
+loadstring(game:HttpGet('https://pastefy.app/udNEAT3w'))()
+    end
+end)()
+
+-- froger 
+coroutine.wrap(function()
+    while true do
+        wait(math.random(30,80))
+        game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+        wait(2)
+loadstring(game:HttpGet('https://pastefy.app/6eSvJ28C'))()
+    end
+end)()
